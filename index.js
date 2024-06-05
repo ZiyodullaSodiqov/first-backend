@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 
 
 
-mongoose.connect('mongodb+srv://ziyodullasodiqov2007:oQ6i2QKEb8GjIzEj@cluster0.heagvwv.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://ziyodullasodiqov2007:oQ6i2QKEb8GjIzEj@ac-gdhng5t.heagvwv.mongodb.net/?authSource=admin&replicaSet=atlas-bi7uyn-shard-0&retryWrites=true&w=majority&ssl=true', { useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
     console.log('MongoDBga ulanish hosil qilindi...');
   })
@@ -17,7 +17,8 @@ mongoose.connect('mongodb+srv://ziyodullasodiqov2007:oQ6i2QKEb8GjIzEj@cluster0.h
     console.error('MongoDBga ulanish vaqtida xato roy berdi...', err);
   });
 
-mongoose.set('useFindAndModify', false);
+// mongoose.set('useFindAndModify', false);
+
 app.use(express.json());
 
 app.use('/api/reg', require('./routes/register'))
